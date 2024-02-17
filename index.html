@@ -1,30 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="index.css">
-    <title>zufälliger Buchstabe</title>
+    <link rel="stylesheet" href="bundesländerBenennen.css">
 </head>
 <body>
-   <section class="main_Buchstaben">
-    <button id="button_neuesSpiel" onclick="neuesSpielStarten()">neues Spiel</button>
-    <p id="p_hinweis">Drück den Knopf für einen Buchstaben</p>
-    <button id="button_zufälligerBuchstabeAuslösen" onclick="zufälligerBuchstabeAuslösen()"></button>
-    <p id="p_Anzeige_welcherBuchstabe">...</p>
-    <p id="p_Anzeige_wievielteRunde">Runde: 0</p>
-    <p id="p_Anzeige_übrigeBuchstaben">Übrige Buchstaben: 26</p>
-   </section>
+    <section>
+        <img src="https://github.com/battlerager666/bundeslaender-erraten/blob/main/deutschlandkarte.png?raw=true" id="bildDE">
+        <p id="frage"></p>
+        <div id="button_div">
+            <button class="button_bundesland" id="Schleswig-Holstein" onclick="AnswerGiven('Schleswig-Holstein')">Schleswig-Holstein</button> <br>
+            <button class="button_bundesland" id="Mecklenburg-Vorpommern" onclick="AnswerGiven('Mecklenburg-Vorpommern')">Mecklenburg-Vorpommern</button> <br>
+            <button class="button_bundesland" id="Hamburg" onclick="AnswerGiven('Hamburg')">Hamburg</button> <br>
+            <button class="button_bundesland" id="Niedersachsen" onclick="AnswerGiven('Niedersachsen')">Niedersachsen</button> <br>
+            <button class="button_bundesland" id="Bremen" onclick="AnswerGiven('Bremen')">Bremen</button> <br>
+            <button class="button_bundesland" id="Thüringen" onclick="AnswerGiven('Thüringen')">Thüringen</button> <br>
+            <button class="button_bundesland" id="Sachsen" onclick="AnswerGiven('Sachsen')">Sachsen</button> <br>
+            <button class="button_bundesland" id="Sachsen-Anhalt" onclick="AnswerGiven('Sachsen-Anhalt')">Sachsen-Anhalt</button> <br>
+            <button class="button_bundesland" id="Brandenburg" onclick="AnswerGiven('Brandenburg')">Brandenburg</button> <br>
+            <button class="button_bundesland" id="Berlin" onclick="AnswerGiven('Berlin')">Berlin</button> <br>
+            <button class="button_bundesland" id="Nordrhein-Westfalen" onclick="AnswerGiven('Nordrhein-Westfalen')">Nordrhein-Westfalen</button> <br>
+            <button class="button_bundesland" id="Hessen" onclick="AnswerGiven('Hessen')">Hessen</button> <br>
+            <button class="button_bundesland" id="Rheinland-Pfalz" onclick="AnswerGiven('Rheinland-Pfalz')">Rheinland-Pfalz</button> <br>
+            <button class="button_bundesland" id="Saarland" onclick="AnswerGiven('Saarland')">Saarland</button> <br>
+            <button class="button_bundesland" id="Baden-Württemberg" onclick="AnswerGiven('Baden-Württemberg')">Baden-Württemberg</button> <br>
+            <button class="button_bundesland" id="Bayern" onclick="AnswerGiven('Bayern')">Bayern</button> <br>
+        </div>
+    </section>
+    <div id="alleExtraButtons">
+        <button onclick="neueRunde()" id="spielStarten_button">nächste Frage</button>
 
-   <section class="main_Stoppuhr">
-    <input type="number" id="input_Stoppuhr_Zeit" placeholder="Zeit in min" oninput="zeitAnzeigen(), StoppuhrBeenden()">
-    <button id="button_Stoppuhr_auslösen" onclick="StoppuhrAuslösen()">Start</button>
-    <p id="p_Anzeige_Stoppuhr">0 : 0</p>
-    <button onclick="StoppuhrBeenden()" id="button_manuellStoppuhrBeenden">Ende</button>
-   </section>
+        <button id="btn_hilfeUmschalten">Hilfe</button>
+        <button id="btn_lösungAnzeigenUmschalten">Lösung</button>
+    </div>
 
 
 
-      <script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

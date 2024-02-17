@@ -1,80 +1,93 @@
 body {
-  margin: 0;
-  background-color: white;
-  color: rgb(60, 60, 60);
-  font-family: fantasy;
-  overflow: scroll;
-}
-
+    margin: 0;
+    background-color: rgb(221, 173, 110);
+    color: rgb(60, 60, 60);
+    font-family: fantasy;
+    overflow: scroll;
+  }
+  
 section {
-  display: grid;
-  place-items: center;
-  align-content: center;
-  min-height: 80vh;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 80vh;
 }
 
-.main_Buchstaben { /*Buchstaben*/
-  text-align: center;
-  font-size: 2rem;
+#frage {
+    font-size: 70px;
+    position: absolute;
+    top: -60px;
 }
 
-#button_neuesSpiel {
-  width: 20%;
-  font-size: 1.5rem;
-  background-color: bisque;
-  border-radius: 0.8rem;
-  border: 1px solid;
+#bildDE {
+    position: absolute;
+    top: 0;
+    height: 800px;
+    width: 900px;
+    border-radius: 500px;
 }
 
-#button_zufälligerBuchstabeAuslösen {
-  width: 50%;
-  min-height: 7rem;
-  background-color: bisque;
-  border: 2px solid;
-  border-radius: 2rem;
+#button_div {
+    display: grid;
+    position: absolute;
+    top: 100px;
+    border: 1px solid;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+    grid-template-areas:
+        " . . . . . Schleswig-Holstein . . . . . ."
+        " . . . . . . . . Mecklenburg-Vorpommern . . ."
+        " . . Niedersachsen . . Hamburg . . . . . ."
+        " . . . . Bremen . . . . . . Brandenburg"
+        " . . . . . . . Sachsen-Anhalt . Berlin . ."
+        " . . Nordrhein-Westfalen . . . . . . . . ."
+        " . . . . . . Thüringen . . . . ."
+        " . . . . Hessen . . . . . Sachsen ."
+        " . . Rheinland-Pfalz . . . . . . . . ."
+        ". Saarland . . . . . . . . . ."
+        " . . . . Baden-Württemberg . . . Bayern . . ."
+        " . . . . . . . . . . . .";
 }
 
-#button_zufälligerBuchstabeAuslösen:hover {
-  background-color: wheat;
+.button_bundesland {
+    padding: 0px;
+    background-color: rgba(214, 74, 55, 0.4);
+    color: rgb(250, 197, 197);
+    border-radius: 20px;
 }
 
-#p_Anzeige_welcherBuchstabe {
-  font-size: 4rem;
-  margin: 2rem;
+#spielStarten_button {
+    bottom: 40px;
+    font-size: xx-large;
+    background-color: darkkhaki;
+    border-radius: 10px;
 }
 
-.main_Stoppuhr { /*Stoppuhr*/
-  text-align: center;
-  font-size: 2rem;
+#btn_hilfeUmschalten{
+    padding: 3rem;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#btn_hilfeUmschalten:hover{
+    padding: 3rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(252, 218, 174);
 }
 
-#input_Stoppuhr_Zeit{
-  text-align: center;
-  font-size: 1.5rem;
-  border-radius: 0.5rem;
-  color: rgba(0, 0, 0, 1);
-  width: 30%;
-  margin: 1rem;
+#btn_lösungAnzeigenUmschalten{
+    padding: 3rem;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#btn_lösungAnzeigenUmschalten:hover{
+    background-color: rgb(252, 218, 174);
 }
 
-#button_Stoppuhr_auslösen{
-  width: 25%;
-  font-size: 1.5rem;
-  background-color: rgb(238, 215, 186);
-  border-radius: 0.8rem;
-  border: 1px solid;
-  margin: 2rem;
-}
-
-#p_Anzeige_Stoppuhr{
-  font-size: 4rem;
-  border: 2px solid;
-  border-radius: 1rem;
-  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
-}
-
-#button_manuellStoppuhrBeenden{
-  font-size: 2rem;
-  border: 1px solid;
-  border-radius: .5rem;
+#alleExtraButtons{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20%;
+    height: 100%;
 }
