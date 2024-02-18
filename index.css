@@ -1,7 +1,19 @@
+:root {
+    --main_color_bg: rgb(231, 196, 150);
+    --main_color: rgb(43, 42, 42);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main_color_bg: rgb(94, 92, 92);
+        --main_color: rgb(194, 184, 171);
+    }
+}
+
 body {
     margin: 0;
-    background-color: rgb(231, 196, 150);
-    color: rgb(43, 42, 42);
+    background-color: var(--main_color_bg);
+    color: var(--main_color);
     font-family: fantasy;
     overflow: scroll;
   }
@@ -15,8 +27,7 @@ section {
 
 #frage {
     font-size: 70px;
-    position: absolute;
-    top: -60px;
+    margin: 0.5rem;
 }
 
 #div_bild {
@@ -35,7 +46,7 @@ section {
 #button_div {
     display: grid;
     position: absolute;
-    border: 1px solid;
+    border: 1px solid black;
     grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
     grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
     grid-template-areas:
