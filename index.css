@@ -1,7 +1,7 @@
 body {
     margin: 0;
-    background-color: rgb(221, 173, 110);
-    color: rgb(60, 60, 60);
+    background-color: rgb(231, 196, 150);
+    color: rgb(43, 42, 42);
     font-family: fantasy;
     overflow: scroll;
   }
@@ -19,18 +19,22 @@ section {
     top: -60px;
 }
 
+#div_bild {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
 #bildDE {
-    position: absolute;
-    top: 0;
-    height: 800px;
     width: 900px;
-    border-radius: 500px;
+    height: 800px;
+    object-fit: contain;
 }
 
 #button_div {
     display: grid;
     position: absolute;
-    top: 100px;
     border: 1px solid;
     grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
     grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
@@ -59,35 +63,15 @@ section {
 #spielStarten_button {
     bottom: 40px;
     font-size: xx-large;
-    background-color: darkkhaki;
+    background-color:  rgb(177, 152, 119);
     border-radius: 10px;
 }
 
-#btn_hilfeUmschalten{
+#btn_hilfeUmschalten, #btn_lösungAnzeigenUmschalten{
+    font-size: 1.5rem;
     padding: 3rem;
+    margin: 0.5rem;
     border: 1px solid black;
     border-radius: 10px;
-}
-#btn_hilfeUmschalten:hover{
-    padding: 3rem;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: rgb(252, 218, 174);
-}
-
-#btn_lösungAnzeigenUmschalten{
-    padding: 3rem;
-    border: 1px solid black;
-    border-radius: 10px;
-}
-#btn_lösungAnzeigenUmschalten:hover{
-    background-color: rgb(252, 218, 174);
-}
-
-#alleExtraButtons{
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 20%;
-    height: 100%;
+    background-color: rgb(209, 186, 156);
 }

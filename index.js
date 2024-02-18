@@ -2,13 +2,19 @@ const alleBundesländer = Array("Schleswig-Holstein","Mecklenburg-Vorpommern","H
 "Berlin","Nordrhein-Westfalen","Hessen","Rheinland-Pfalz","Saarland","Baden-Württemberg","Bayern");
 
 let zufälligesBundesland;
+var hilfenAngezeigt = false;
+var lösungAngezeigt = false;
 
 function neueRunde() { //neues bundesland anzeigen
+    if(lösungAngezeigt === true){ //vorherige lösung löschen
+        buttonColorÄndernEinzeln("rgba(214, 74, 55, 0.4)");
+    }
+
     zufälligesBundesland = alleBundesländer[Math.floor(Math.random()*alleBundesländer.length)];
     
     document.getElementById("frage").innerText = zufälligesBundesland;
 
-    if(hilfenAngezeigt === true){
+    if(lösungAngezeigt === true){ //bei hilfe an: hintergrund der buttons rot
         buttonColorÄndernEinzeln("red");
     }
 }
@@ -16,17 +22,17 @@ function neueRunde() { //neues bundesland anzeigen
 function AnswerGiven(Answer) {
     if(Answer === zufälligesBundesland) { //wenn richtig: neue runde und grüner hintergrund
         console.log("richtig");
-        changeBackground("rgb(101, 175, 101)"); //grün
+        changeBackground("rgb(130, 201, 130)"); //grün
         setTimeout(() => {
-            changeBackground("rgb(221, 173, 110)"); //normalfarbe
+            changeBackground("rgb(231, 196, 150)"); //normalfarbe hintergrund
           }, 500);
 
         neueRunde();
     } else{ //wenn falsch: roter hintergrund
         console.log("falsch");
-        changeBackground("rgb(218, 78, 78)"); //rot
+        changeBackground("rgb(224, 114, 114)"); //rot
         setTimeout(() => {
-            changeBackground("rgb(221, 173, 110)"); //normalfarbe
+            changeBackground("rgb(231, 196, 150)"); //normalfarbe hintergrund
           }, 500);
     }
 }
@@ -35,28 +41,35 @@ function changeBackground(color){
     document.body.style.background = color;
 }
 
-function buttonColorÄndernEinzeln(color){ //bei hilfe an: hintergrund der buttons rot
+function buttonColorÄndernEinzeln(color){
     document.getElementById(zufälligesBundesland).style.background = color;
 }
 
 const bundesländerHilfen = [];
-var hilfenAngezeigt = false;
 
-document.getElementById("btn_hilfeUmschalten").addEventListener("click", function(e){
+document.getElementById("btn_hilfeUmschalten").addEventListener("click", function(e){ //hilfe anzeigen
     if(hilfenAngezeigt === true){
         for(let i = 0; i < alleBundesländer.length; i++){ //alle namen löschen
             document.getElementById(alleBundesländer[i]).innerText = "";
-        }
-        for(let i = 0; i < alleBundesländer.length; i++){ //jede farbe resetten
-            document.getElementById(alleBundesländer[i]).style.background = "rgba(214, 74, 55, 0.4)";
         }
         hilfenAngezeigt = false;
     } else{
         for(let i = 0; i < alleBundesländer.length; i++){ //alle namen anzeigen
             document.getElementById(alleBundesländer[i]).innerText = bundesländerHilfen[i];
         }
-        buttonColorÄndernEinzeln("red"); //farbe für erstes bundesland anzeigen
         hilfenAngezeigt = true;
+    }
+});
+
+document.getElementById("btn_lösungAnzeigenUmschalten").addEventListener("click", function(e){ //lösung anzeigen
+    if(lösungAngezeigt === true){
+        for(let i = 0; i < alleBundesländer.length; i++){ //jede farbe resetten
+            document.getElementById(alleBundesländer[i]).style.background = "rgba(214, 74, 55, 0.4)"; //normalfarbe button
+        }
+        lösungAngezeigt = false;
+    } else{
+        buttonColorÄndernEinzeln("red"); //farbe für erstes bundesland anzeigen
+        lösungAngezeigt = true;
     }
 });
 
